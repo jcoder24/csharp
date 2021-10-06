@@ -1,0 +1,26 @@
+using System;
+
+namespace MyApplication
+{
+    // Implementation
+    public static class DateTimeExtensions
+    {
+        public static DateTime NextDay(this DateTime dateTime)
+        {
+            return dateTime.AddDays(1);
+        }
+
+        public static DateTime PreviousDay(this DateTime dateTime) => dateTime.AddDays(-1);
+    }
+
+    // Usage
+    public static class Sample
+    {
+        public static void Main()
+        {
+            var today = DateTime.Now;
+            var yesterday = today.PreviousDay();
+            var tomorrow = today.NextDay();
+        }
+    }
+}
